@@ -1,4 +1,4 @@
-# GRAV, nodb İYS, Twig Tema Oluşturma ve Göç Süreci
+## GRAV, nodb İYS, Twig Tema Oluşturma ve Göç Süreci
 
 #### Grav ismi Gravity kelimesinin sadece kısaltılmış bir versiyonudur.
 
@@ -28,19 +28,25 @@
 
 #### Kurulum
 [Grav](https://getgrav.org/downloads) veya [Grav+Admin](https://getgrav.org/downloads) paketini indirin. 
-ZIP dosyasını web sunucunuzun webroot’ una çıkarın, 
+
+ZIP dosyasını web sunucunuzun webroot’ una çıkarın,
+
 örn. ~/webroot/grav
 
 #### Tavsiye
+Gvar indirip, çalıştığını göstermek için yukarıda anlatılan şekilde de kurulabildiğinden bahseder, fakat bu şekilde kurulumda bağımlı olduğu paketleri kurmak daha zahmetli olacaktır.
+
+PHP uygulamalarında composer tercih edilmesi uygun olacaktır.
+
 ```
-cd ~/webroot
-git clone -b master https://github.com/getgrav/grav.git
+#cd ~/webroot
+#git clone -b master https://github.com/getgrav/grav.git
 
-cd ~/webroot/grav
-composer install --no-dev -o
+#cd ~/webroot/grav
+#composer install --no-dev -o
 
-cd ~/webroot/grav
-bin/grav install
+#cd ~/webroot/grav
+#bin/grav install
 ```
 
 #### Çoklu Site 
@@ -124,13 +130,13 @@ sadece. Ya da bir liste oluşturmak:
 ```
 
 ### Çoklu Dil Konfigürasyonu 
-
+```
 user/config/system.yaml
 languages:
   supported:
     - tr
     - en
-
+```
 Her sayfa bir markdown dosyası ile temsil edilir, örneğin default.md 
 Çok dilli desteği etkinleştirdiğinizde, Grav uygun şekilde adlandırılmış markdown dosyasını arayacaktır. 
 
