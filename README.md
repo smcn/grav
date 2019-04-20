@@ -34,7 +34,7 @@ ZIP dosyasını web sunucunuzun webroot’ una çıkarın,
 örn. ~/webroot/grav
 
 #### Tavsiye
-Gvar indirip, çalıştığını göstermek için yukarıda anlatılan şekilde de kurulabildiğinden bahseder, fakat bu şekilde kurulumda bağımlı olduğu paketleri kurmak daha zahmetli olacaktır.
+Grav, indirip çalıştığını göstermek için yukarıda anlatılan şekilde de kurulabildiğinden bahseder, fakat bu şekilde kurulumda bağımlı olduğu paketleri kurmak daha zahmetli olacaktır.
 
 PHP uygulamalarında composer tercih edilmesi uygun olacaktır.
 
@@ -138,6 +138,7 @@ languages:
     - en
 ```
 Her sayfa bir markdown dosyası ile temsil edilir, örneğin default.md 
+
 Çok dilli desteği etkinleştirdiğinizde, Grav uygun şekilde adlandırılmış markdown dosyasını arayacaktır. 
 
 Örneğin, Türkçe varsayılan dilimizdir, önce default.tr.md‘ yi arayacaktır. 
@@ -154,8 +155,9 @@ slug: about
 ---
 http://yoursite.com/en/about
 
-Collection
 
+### Collection
+```
 ---
 content:
     items: '@self.children'
@@ -165,13 +167,17 @@ content:
     limit: 10
     pagination: true
 ---
+```
 
+```
 {% for p in page.collection %}
 <h2>{{ p.title }}</h2>
 {{ p.summary }}
 {% endfor %}
+```
 
-Children
+### Children
+```
   <h3 class="title">{{ t("BLOG.ITEM.IMAGE_GALLERIES") }}</h3>
   <div class="row page-row">
 {% set _page = page.find('/galeri/resimler') %}	
@@ -190,20 +196,22 @@ Children
 	   </div>
 	</div>
 {% endfor %}
-  
-Tema Yapımı
+```
 
+### Tema Yapımı
+```
 bin/gpm install devtools
 bin/plugin devtools new-theme
+```
 
-blueprints.yaml	Grav tarafından temanız hakkında bilgi almak için 		kullanılan yapılandırma dosyası.
+```
+blueprints.yaml	Grav tarafından temanız hakkında bilgi almak için kullanılan yapılandırma dosyası.
+my-theme.yaml	Eklentinin kullanabileceği seçenekleri belirlemek için kullanılan eklentidir.
+templates/ 	Sayfalarınızı oluşturmak için Twig şablonlarını içeren bir klasör.
+templates/partials/ Twig şablonlarının için include edilebilen web sayfaları 
+```
 
-my-theme.yaml	Eklentinin kullanabileceği seçenekleri belirlemek 			için kullanılan eklentidir.
-
-templates/ 	Sayfalarınızı oluşturmak için Twig şablonlarını 			içeren bir klasör.
-
-templates/partials/ Twig şablonlarının için include edilebilen web 			sayfaları 
-
+```
 .
 ├── CHANGELOG.md
 ├── LICENSE
@@ -220,8 +228,11 @@ templates/partials/ Twig şablonlarının için include edilebilen web 			sayfal
 │       ├── base.html.twig
 │       └── header.html.twig
 └── thumbnail.jpg
+```
+
 
 templates/default.html.twig
+```
 {% embed 'partials/base.html.twig' %}
 {% block content %}
   <div class="content container">
@@ -238,9 +249,10 @@ templates/default.html.twig
   </div><!--//content-->
 {% endblock %}
 {% endembed %}
+```
 
 templates/partials/base.html.twig
-
+```
 <!DOCTYPE html>
 <head>
     {% set _page = page.find('/home') %}
@@ -262,8 +274,10 @@ templates/partials/base.html.twig
     {% include 'partials/footer.html.twig' %}
 </body>
 </html> 
+```
 
 home.tr.md
+```
 ---
 title: Anasayfa
 birim_adi: 'Eğitim Fakültesi'
@@ -286,9 +300,10 @@ topMenu:
         title: İletişim
         url: /iletisim
 ---
+```
 
-CLI Console
-
+### CLI Console
+```
 #cd ~/webroot/grav
 #bin/grav		Temel Grav İşlemleri
 #bin/gmp		Grav paket Yönetici işlemleri (Grav Package Manager)
@@ -301,13 +316,18 @@ Eklenti güncelleme
 
 Grav güncelleme
 bin/gpm selfupgrade
+```
 
-Göç İşlemleri
-
+### Göç İşlemleri
+```
 #composer require chrisullyott/csv-to-grav
+```
 
+```
 cp -R /usr/local/www/grav/user/sites/sablon.omu.edu.tr/pages/* ${dizin}pages/
+```
 
+```
 <?
 fwrite($myfile, "title_field,date_field,html_field,author_field,dizin,icerikdizin,sablon\n");
 foreach( $json->d as $haber) {
@@ -315,11 +335,10 @@ foreach( $json->d as $haber) {
                 .",root," .$fakulte. "2.omu.edu.tr/,haberler/" .sprintf('%02d.', ++$i).$haber->annoSeolink. ",announcement.tr\n" ;
         fwrite($myfile, $txt);
 }
-
-Göç İşlemleri
+```
 
 covert.php
-
+```
 <?
 $conversion->setColumnMap(array(
     'title'    => 'title_field',   
@@ -332,10 +351,4 @@ $conversion->setColumnMap(array(
 ));
 
 $count = $conversion->build();
-
-
-
-
-
-
-
+```
