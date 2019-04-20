@@ -1,7 +1,4 @@
 <?php
-/**
- * ÇALIŞAN
-**/
 
 use Grav\Common\Utils;
 
