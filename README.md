@@ -43,8 +43,12 @@ cd ~/webroot/grav
 bin/grav install
 ```
 
-#### Çoklu Site İçin Klasörler Yapısı
+#### Çoklu Site 
 
+##### [setup.php](setup.php)
+
+##### Klasörler Yapısı
+```
 /user/sites/site-adi/accounts 	Kullanıcı hesap dosyaları(.yaml)
 /user/sites/site-adi/config 	Site için konfigürasyon dosyaları(.yaml)
 /user/sites/site-adi/plugins 	/user/plugins klasörüne link
@@ -52,9 +56,9 @@ bin/grav install
 
 /user/plugins 			Eklentiler. 
 /user/themes 			Temalar.
+```
 
-Çoklu Site İçin [setup.php](setup.php)
-
+```
 /user
 └── /sites	
 	└── /site-adi
@@ -67,22 +71,20 @@ bin/grav install
 			├── /03.etkinlikler
 			│   ├── /etkinlik1
 			│   └── /etkinlik2
-			├── /03.hakkimizda
+			├── /04.hakkimizda
 			└── /resim-galerisi
+```
 
-Web Sayfa Dosyası 
-
-Dosya adı, Markdown biçimli bir dosya olduğunu belirtmek için .md ile bitmelidir.
-
-Dosyanın adı, kullanılacak temanın şablon dosyasının adını gösterir.
-
+#### Web Sayfa Dosyası 
+* Dosya adı, Markdown biçimli bir dosya olduğunu belirtmek için .md ile bitmelidir. Örn. default.md
+* Dosyanın adı, kullanılacak temanın şablon dosyasının adını gösterir.
 Örn. /user/themes/tema-adi/templates/default.html.twig 
 
-Ana şablon dosyası için standart ad varsayılandır, dolayısıyla dosya /user/pages/site-adi/pages/01.home/default.md 
+Ana şablon dosyası için standart ad 'default' tur, dolayısıyla dosya /user/pages/site-adi/pages/01.home/default.md 
 olarak adlandırılır. 
 
-Örnek bir sayfa dosyası(default.md) şöyle görünebilir:
-
+#### Örnek bir sayfa dosyası(default.md) şöyle görünebilir:
+```
 ---
 title: Page Title
 publish_date: 01/23/2019 13:00
@@ -91,12 +93,13 @@ published: false
 # Page Title
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor eu.
-
+```
 --- marker çifti, sayfa için temel YAML ayarlarından oluşur. 
 
 Sonraki içerik, Markdown olarak yazılan, sitenizde derlenip HTML olarak işlenecek gerçek içeriktir.
 
 HTML
+```
 <p>Geçerli <a href="https://tr.wikipedia.org/wiki/HTML">HTML</a> 
 yazmak için, sözdizimi kurallarını doğru kullanmanız gerekir.
 Bazı durumlarda ise belli kelimeleri kolayca <strong>bold</strong> 
@@ -107,8 +110,9 @@ sadece. Ya da bir liste oluşturmak:</p>
 <li>Kolay olmalı</li>
 <li>Zor olmamalı</li>
 </ul>
-
+```
 Markdown
+```
 Geçerli [HTML](https://tr.wikipedia.org/wiki/HTML) 
 yazmak için, sözdizimi kurallarını doğru kullanmanız gerekir. 
 Bazı durumlarda ise belli kelimeleri kolayca **bold** 
@@ -117,8 +121,9 @@ sadece. Ya da bir liste oluşturmak:
 
 - Kolay olmalı
 - Zor olmamalı
+```
 
-Çoklu Dil Konfigürasyonu 
+### Çoklu Dil Konfigürasyonu 
 
 user/config/system.yaml
 languages:
