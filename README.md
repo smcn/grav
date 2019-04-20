@@ -51,7 +51,9 @@ bin/grav install
 /user/sites/site-adi/pages 	Site için web sayfası dosyaları(.md), resim, video vb.
 
 /user/plugins 			Eklentiler. 
-/user/themes 				Temalar.
+/user/themes 			Temalar.
+
+Çoklu Site İçin [setup.php](setup.php)
 
 /user
 └── /sites	
