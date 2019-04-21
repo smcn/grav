@@ -25,7 +25,7 @@
 #### Grav kasıtlı olarak az sayıda gereksinimle tasarlanmıştır.
 * Web Sunucusu, Apache, Nginx, LiteSpeed, Lightly, IIS, vb.
 * Betik Dili, PHP 7.1.3 veya üstü
-* Veri Tabanı, Gerekli bir veritabanı yok, Grav, içeriğiniz için düz metin dosyaları ile oluşturulmuştur..
+* Veri Tabanı, Gerekli bir veritabanı yok, Grav, içeriğiniz için düz metin dosyalarını kullanır...
 
 #### Kurulum
 [Grav](https://getgrav.org/downloads) veya [Grav+Admin](https://getgrav.org/downloads) paketini indirin. 
