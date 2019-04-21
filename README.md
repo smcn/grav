@@ -169,6 +169,30 @@ yazılırsa, http://yoursite.com/en/about çalışacaktır...
 
 > Temanın dil dosyasını(/user/themes/fakulte/languages.yaml) kullanın, eklentiler dil dosyasında yapılan değişiklikler güncellenince kaybolacaktır.
 
+/user/themes/fakulte/languages.yaml
+```
+en:
+  EVENT_CALANDER: Event Calender
+  VIDEO_GALLERY: Video Gallery
+  LINKS: Links
+  CONTACT: Contact
+tr:
+  EVENT_CALANDER: Etkinlik Takvimi
+  VIDEO_GALLERY: Video Galerisi
+  LINKS: Bağlantılar
+  CONTACT: İletişim
+ar:
+  EVENT_CALANDER: تقويم الأحداث
+   VIDEO_GALLERY: معرض الفيديو
+   LINKS: الروابط
+   CONTACT: اتصالات
+```
+
+Twig kulanımı	
+```
+{{ t("VIDEO_GALLERY") }}
+```
+
 ### Collection
 ```
 ---
