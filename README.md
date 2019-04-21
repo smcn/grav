@@ -353,6 +353,47 @@ topMenu:
 ---
 ```
 
+#### Admin Arayüzüne hazır şablonlar eklenebilir
+
+user/plugins/admin/blueprints/admin/pages/new_announcement.yaml
+```
+title: Announcement
+
+form:
+  
+  fields:
+    section:
+      type: section
+      title: ADD_ANNOUNCEMENT
+
+    title:
+      type: text
+      label: PLUGIN_ADMIN.PAGE_TITLE
+      validate:
+       required: true
+
+    folder:
+      type: hidden
+      default: '@slugify-title'
+      
+    route:
+     type: hidden
+     default: '/haberler'
+
+    name:
+      type: hidden
+      default: 'announcement'
+
+    visible:
+      type: hidden
+      default: ''
+
+    blueprint:
+      type: blueprint
+
+```
+
+
 ### CLI Console
 ```
 #cd ~/webroot/grav
