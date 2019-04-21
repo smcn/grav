@@ -353,7 +353,7 @@ topMenu:
 ---
 ```
 
-#### Admin Arayüzüne hazır şablonlar eklenebilir
+#### Admin arayüzüne hızlı işlemler için blueprint formlar eklenebilir
 
 user/plugins/admin/blueprints/admin/pages/new_announcement.yaml
 ```
