@@ -157,12 +157,17 @@ ancak tarayıcınızı şu adrese yönlendirerek de açıkça Türkçe' yi istey
 
 http://yoursite.com/tr
 
-http://yoursite.com/hakkimizda
+Dizin isimlerinide çevirebilirsiniz...
+
+Örneğin, http://yoursite.com/hakkimizda dizininde default.en.md dosyasında yaml alanına
+```
 ---
 slug: about
 ---
-http://yoursite.com/en/about
+```
+yazılırsa, http://yoursite.com/en/about çalışacaktır...
 
+> Temanın dil dosyasını(/user/themes/fakulte/languages.yaml) kullanın, eklentiler dil dosyasında yapılan değişiklikler güncellenince kaybolacaktır.
 
 ### Collection
 ```
