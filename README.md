@@ -49,6 +49,16 @@ PHP uygulamalarında composer tercih edilmesi uygun olacaktır.
 #bin/grav install
 ```
 
+/usr/local/etc/nginx/nginx.conf, sadece root dizini olarak grav kurduğunuz dizini gösterin ve subdomainlerin cname lerini grav sunucuna yönlendirin, gerisini grav halleder...
+```
+user www;
+http {
+    …
+    server {
+	root /usr/local/www/grav;
+	…
+```
+
 #### Çoklu Site 
 
 ##### [setup.php](setup.php)
@@ -176,16 +186,19 @@ en:
   VIDEO_GALLERY: Video Gallery
   LINKS: Links
   CONTACT: Contact
+  ...
 tr:
   EVENT_CALANDER: Etkinlik Takvimi
   VIDEO_GALLERY: Video Galerisi
   LINKS: Bağlantılar
   CONTACT: İletişim
+  ...
 ar:
   EVENT_CALANDER: تقويم الأحداث
-   VIDEO_GALLERY: معرض الفيديو
-   LINKS: الروابط
-   CONTACT: اتصالات
+  VIDEO_GALLERY: معرض الفيديو
+  LINKS: الروابط
+  CONTACT: اتصالات
+  ...
 ```
 
 Twig kulanımı	
