@@ -20,6 +20,7 @@
 * Sadece mevcut en iyi yazılımları, uygun şekilde konuşturur.
 * Sayfaların, karmaşık veri tabanı tablo ilişkileri yerine hiyerarşik bir ağaç yapısında olması, daha anlaşılır hale getirir.
 * Eklentilerde, veritabanında ekstra anlaşılmaz tablolar açmaz, Controller yoksa sadece template klasöründe twig uzantılı dosya ekler.
+* Her işi değil, işimize yarayanı en iyi şekilde yapar.
 
 #### Grav kasıtlı olarak az sayıda gereksinimle tasarlanmıştır.
 * Web Sunucusu, Apache, Nginx, LiteSpeed, Lightly, IIS, vb.
