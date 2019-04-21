@@ -55,14 +55,22 @@ PHP uygulamalarında composer tercih edilmesi uygun olacaktır.
 
 ##### Klasörler Yapısı
 ```
-/user/sites/site-adi/accounts 	Kullanıcı hesap dosyaları(.yaml)
-/user/sites/site-adi/config 	Site için konfigürasyon dosyaları(.yaml)
-/user/sites/site-adi/plugins 	/user/plugins klasörüne link
-/user/sites/site-adi/pages 	Site için web sayfası dosyaları(.md), resim, video vb.
+/user/sites/site-adi/accounts 		Kullanıcı hesap dosyaları(.yaml)
+/user/sites/site-adi/config 		Site için konfigürasyon dosyaları(.yaml)
+/user/sites/site-adi/plugins 	-> 	/user/plugins klasörüne link
+/user/sites/site-adi/pages 		Site için web sayfası dosyaları(.md), resim, video vb.
 
 /user/plugins 			Eklentiler. 
 /user/themes 			Temalar.
 ```
+
+Tüm sitelerde hesaplar /user/sites/site-adi/accounts dizininde saklanmakta, tüm sitelerde kullanılacak hesaplar link olarak eklenir ise, tek bir yerden değiştirildiğinde tüm siteler için değişecektir. 
+```
+/user/sites/site-adi/accounts/admin.yaml 	->	/user/accounts/admin.yaml
+/user/sites/site-adi/accounts/ceviri.yaml 	->	/user/accounts/ceviri.yaml 
+```
+
+Web sitesi için içerik sayfaları ağaç yapısı 
 
 ```
 /user
